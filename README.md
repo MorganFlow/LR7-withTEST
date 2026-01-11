@@ -54,9 +54,9 @@ docker-compose up --build
 docker-compose up -d
 
 После запуска приложение будет доступно по адресу: http://localhost:8000
-
-4. Выполнение миграций (при первом запуске)
+ 
 # В отдельном терминале
+Выполнение миграций (при первом запуске)
 
 docker-compose exec web python manage.py migrate
 
