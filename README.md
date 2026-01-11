@@ -131,3 +131,7 @@ GET /api/users/search/?query=username - Поиск пользователей
 Управление достижениями и таблицей лидеров
 
 Модерация запросов в друзья
+
+# Тестирование
+
+docker-compose exec web pytest ark_app/tests/
