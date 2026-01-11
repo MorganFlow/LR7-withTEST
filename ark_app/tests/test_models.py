@@ -7,7 +7,10 @@ from django.db.utils import IntegrityError
 @pytest.mark.django_db
 def test_create_userprofile():
     user = User.objects.create_user(username='test', password='test')
-    profile = UserProfile.objects.create(user=user, bio='bio', date_of_birth='2000-01-01')
+    profile = UserProfile.objects.get(user=user)
+    profile.bio = 'bio'
+    profile.date_of_birth = '2000-01-01'
+    profile.save()
     assert profile.user == user
     assert profile.bio == 'bio'
     assert profile.created_at is not None
